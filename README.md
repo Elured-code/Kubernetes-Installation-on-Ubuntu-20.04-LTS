@@ -63,6 +63,9 @@ kubectl version --client && kubeadm version
 ```
 sudo swapoff -a
 ```
+> Disable swap permanently
+sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+```
 > Enable the iptables bridge(Set a value in the sysctl file , to allow proper network settings for Kubernetes on all the servers)
 ```
 echo "net.bridge.bridge-nf-call-iptables=1" | sudo tee -a /etc/sysctl.conf
