@@ -119,8 +119,13 @@ kubectl cluster-info
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
 > To Set with Calico networking
+> Install the Tigera Calico operator and custom resource definitions.
 ```
-kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/tigera-operator.yaml
+```
+> Install Calico by creating the necessary custom resource.
+```
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.1/manifests/custom-resources.yaml
 ```
 ### **Step 6: Add worker nodes**
 
